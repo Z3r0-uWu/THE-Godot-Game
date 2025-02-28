@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl8273qavaw2x"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/carcy.gd" id="1_0y4c1"]
+[ext_resource type="Texture2D" uid="uid://b08sawe4kv5iu" path="res://Images/Carcy/Amination_Carcy.png" id="2_h2it5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ve0n"]
+atlas = ExtResource("2_h2it5")
+region = Rect2(0, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivtl"]
+atlas = ExtResource("2_h2it5")
+region = Rect2(224, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crhg3"]
+atlas = ExtResource("2_h2it5")
+region = Rect2(448, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1qje"]
+atlas = ExtResource("2_h2it5")
+region = Rect2(672, 0, 224, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_un15e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ve0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivtl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crhg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1qje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47bd8"]
+size = Vector2(63, 60)
+
+[node name="Carcy" type="CharacterBody2D"]
+script = ExtResource("1_0y4c1")
+
+[node name="Carcy_run" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.324, 1.23)
+sprite_frames = SubResource("SpriteFrames_un15e")
+autoplay = "default"
+
+[node name="hitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_47bd8")
+
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="hitBox" to="." method="_on_area_2d_body_entered"]

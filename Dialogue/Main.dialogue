@@ -1,0 +1,49 @@
+~ start
+set Global.talking = true
+set Global.able_talking = false
+	
+if Global.times_talked == 7:
+	Never: Fine! I will tell you what I did but you better tell no one! Got it!
+	- *Nods Head*
+		Never: Good! [wait=1] Yes I did steal this piece of paper! It was pretty!
+		Never: Don't you dare tell the guard over there! I will get arrested or maybe something worse!
+	
+	set Global.times_talked += 1
+	
+	
+if Global.times_talked >= 2 && Global.times_talked <= 6:
+	Never: [shake rate=50 level=10] . . . [/shake]
+	
+	set Global.times_talked += 1
+	
+#Talking to him the second time	
+if Global.times_talked == 1:
+	Never: [shake rate=20 level=10] Why are you still trying to talk to me? [/shake]
+	
+	- ...
+		Never: [shake rate=50 level=10] Can you please talk? It's scaring me! [/shake]
+		- *Shakes head*
+			Never: [shake rate=50 level=10] Meanie! [/shake]
+	
+	set Global.times_talked += 1
+	
+#Talking to him the first time
+if Global.times_talked == 0:
+	#rate = frame rate | level = how much it shakes
+	Never:[shake rate=20 level=10] Hello... who are you?[/shake]
+
+	- ...
+		Never: [shake rate=20 level=10] Oh... [/shake]
+		Never: [shake rate=20 level=10] Umm..... [/shake]
+		Never: [shake rate=20 level=10] Why are you staring at me like that... [/shake]
+	
+		- ...
+			Never: [shake rate=50 level=10] EEEEEEE!!! [/shake]
+			
+	set Global.times_talked += 1
+
+#The end of a convo
+set Global.talking = false
+set Global.Never_talking = true
+set Global.able_talking = true
+=> END!

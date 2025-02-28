@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvbk31vixvkab"]
+
+[ext_resource type="Script" path="res://Scenes/Rooms/test.gd" id="1_o72an"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2wfn"]
+size = Vector2(85, 212)
+
+[node name="Entry Back Doors" type="Area2D"]
+position = Vector2(3238, 309)
+script = ExtResource("1_o72an")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.39, 1, 0.430667, 1)
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_a2wfn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

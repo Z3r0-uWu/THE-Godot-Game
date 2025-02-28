@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bi8jw40altoyq"
+path="res://.godot/imported/goobert.dialogue-ba64a7e5fe97b4823a297e818c338f49.tres"
+
+[deps]
+
+source_file="res://Dialogue/goobert.dialogue"
+dest_files=["res://.godot/imported/goobert.dialogue-ba64a7e5fe97b4823a297e818c338f49.tres"]
+
+[params]
+
+defaults=true

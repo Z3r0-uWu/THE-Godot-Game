@@ -1,0 +1,22 @@
+~ start
+set Global.talking = true
+set Global.able_talking = false
+
+if Global.time_talking_goobert == 1:
+	Goobert: I said go take a shower! I'm going to tell my mother or worse.. the guard! I know scawy. So do it!
+	
+	set Global.time_talking_goobert += 1
+
+if Global.time_talking_goobert == 0:
+	Goobert: YIPPEE!!! A new person! Welcome! You wanna play a game?
+	
+	- ...
+		Goobert: You're no fun, you stink! [wait=1] You smell like dried... [wait=1] Hmmmmmm, what's the word? I forgor! Shot!
+		Goobert: Well you smell like something that isn't good, so go shower stinky!
+		
+	set Global.time_talking_goobert += 1
+	
+
+set Global.talking = false
+set Global.able_talking = true
+=> END

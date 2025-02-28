@@ -1,0 +1,27 @@
+~ start
+set Global.talking = true
+set Global.able_talking = false
+
+if Global.times_talked_guard == 1:
+	Guard: For the love of he, leave me alone! I don't want you talking to me even though you don't say a word.
+	Guard: What are you even? You don't even look or seem like the others.
+	Guard: Why am I even caring for a little thing like you? I could just kick you and you would bow at my feet. So don't you think you're higher than me! No one is higher than 'he!' You got that?
+	
+	- *Nods*
+		Guard: .[wait=0.2].[wait=0.2].[wait=0.2].[wait=0.2].
+		
+	set Global.times_talked_guard += 1
+	
+if Global.times_talked_guard == 0:
+	Guard: W[wait=0.2]h[wait=0.2]a[wait=0.2]t[wait=0.2] do y[wait=0.2]o[wait=0.2]u[wait=0.2] want?
+	Guard: That's what I thought. You scum should not exist in the first place but 'he' says we have to keep you safe, for some awful reason... You guys just waste all our food and resouces.
+	Guard: Isn't that enough to kill you all?
+
+	- . . . . .
+		Guard: *Sigh* You are the reason why I hate you all...
+		
+	set Global.times_talked_guard += 1
+	
+set Global.talking = false
+set Global.able_talking = true
+=> END
